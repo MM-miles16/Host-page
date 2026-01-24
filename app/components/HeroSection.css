@@ -1,0 +1,128 @@
+.hero {
+  background: linear-gradient(to bottom, #e7e6e4,#eae8e4);
+  padding: 60px 0px 30px 60px;
+}
+
+.heroContainer {
+  max-width: 1440px;
+  margin: auto;
+  
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0px;
+}
+
+/* LEFT */
+.heroLeft {
+  flex: 1;
+  max-width: 600px;
+  width: 100%;
+}
+
+.heroTitle {
+  font-size: 3.2rem;
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: 20px;
+  margin-top: 0px;
+  font-family: "Playfair Display", serif;
+}
+
+.heroTitle span {
+  background: linear-gradient(to right, #d8b480 0%, #bf9860 100%);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+.brand{
+    background: linear-gradient(to right, #d8b480 0%, #bf9860 100%);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    font-weight: bold;
+    font-size: 16px;
+}
+.heroSubtitle {
+  font-size: 1rem;
+  line-height: 1.6;
+  font-weight: 500;
+  font-family: Arial;
+  margin-bottom: 28px;
+}
+
+.heroBtn {
+  background: linear-gradient(to right, #d8b480 0%, #bf9860 100%);
+  padding: 12px 20px;
+  border-radius: 12px;
+  font-weight: 700;
+  border: none;
+  font-size: 12px;
+  cursor: pointer;
+}
+.heroBtn:hover{
+    background: linear-gradient(to right, #bf9860 0%,  #d8b480 100%);
+}
+
+/* RIGHT */
+.heroRight {
+  flex: 1;
+  display: flex;
+  margin-top: 30px;
+  margin-left: -40px;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 🔑 MAGIC CONTAINER */
+.carWrapper {
+  position: relative;
+  width: 100%;
+  max-width: 650px;   /* controls size for ALL cars */
+  aspect-ratio: 16 / 9; /* prevents layout jump */
+}
+
+/* 🔑 AUTO FIT */
+.carImage {
+  object-fit: contain;
+  filter: drop-shadow(0 25px 35px rgba(0,0,0,0.25));
+}
+
+/* RESPONSIVE */
+@media (min-width: 1440px) {
+    .hero {
+  background: #e7e6e4;
+  padding: 80px 110px 80px 220px;
+}
+}
+@media (max-width: 900px) {
+  .heroContainer {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .heroTitle {
+    font-size: 2.4rem;
+  }
+
+  .carWrapper {
+    max-width: 500px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 60px 20px;
+  }
+
+  .heroTitle {
+    font-size: 2rem;
+  }
+
+  .carWrapper {
+    max-width: 100%;
+    aspect-ratio: 4 / 3;
+  }
+
+  .heroBtn {
+    width: 100%;
+  }
+}

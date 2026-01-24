@@ -1,9 +1,0 @@
-.banner{
-  background:#e6e6e4;
-  padding:60px;
-  display:flex;
-  justify-content:space-between;
-}
-.left h1 span{color:#7a1c1c;}
-.actions{display:flex;gap:12px;}
-.primary{background:#7a1c1c;color:#fff;padding:10px 18px;border:none;border-radius:6px;}
