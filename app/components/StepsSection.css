@@ -70,4 +70,13 @@
   .stepsHeading {
     font-size: 1.15rem;
   }
+  .stepsHeading {
+  font-size: 22px;
+  font-weight: 600;
+  color: #111;
+  font-family: playfair display;
+  margin-bottom: 38px;
+  transform: translateY(20px);
+  
+}
 }

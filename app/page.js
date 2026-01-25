@@ -5,6 +5,8 @@ import HeroSection from "./components/HeroSection";
 import StatsSection from "./components/StatsSection";
 import SupportRiskSection from "./components/SupportRiskSection";
 import StepsSection from "./components/StepsSection";
+import StrategicSection from "./components/StrategicSection";
+import FeedbackSection from "./components/FeedbackSection";
 
 export default function Home() {
   return (
@@ -13,7 +15,9 @@ export default function Home() {
       <HeroSection />
       <StatsSection />
       <SupportRiskSection />
+      <StrategicSection />
       <StepsSection />
+      <FeedbackSection />
       <Footer />
     </>
   );

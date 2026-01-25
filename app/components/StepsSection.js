@@ -64,7 +64,7 @@ export default function StepsSection() {
         {/* Mobile Image */}
         <div className="stepsMobile">
           <Image
-            src="/steps-mobile.png"
+            src="/dash-host-mobile-new.png"
             alt="Steps to start mobile"
             width={400}
             height={600}
