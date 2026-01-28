@@ -36,7 +36,7 @@ export default function StrategicSection() {
           </p>
 
           <button className="strategicBtn">
-            What you are waiting for? Get a Call.
+            What are you waiting for? Get a call.
           </button>
         </div>
 
@@ -55,26 +55,26 @@ export default function StrategicSection() {
 
           <div className="featureCard topLeft">
             <div className="icon">🔒</div>
-            <h4>Trusted Security</h4>
-            <p>Enterprise-grade protection for your car, data, and earnings.</p>
+            <h4>Trusted Users</h4>
+            <p>Driven only by verified, trusted drivers - with full document validation.</p>
           </div>
 
           <div className="featureCard topRight">
             <div className="icon">🔐</div>
-            <h4>Verified Access</h4>
-            <p>Only verified renters get access to your vehicle.</p>
+            <h4>We’ve Got You</h4>
+            <p>Our hosts are the foundation of MMMiles, Backed by 24/7 support.</p>
           </div>
 
           <div className="featureCard bottomLeft">
             <div className="icon">💰</div>
-            <h4>Safe & Timely Payouts</h4>
-            <p>Your earnings, securely processed and paid on time.</p>
+            <h4>Always On-Time</h4>
+            <p>Your earnings, securely processed and paid on time guaranteed.</p>
           </div>
 
           <div className="featureCard bottomRight">
             <div className="icon">📊</div>
-            <h4>All-in-One Dashboard</h4>
-            <p>Bookings, earnings, and control — all in one place.</p>
+            <h4>100% Data Security</h4>
+            <p>Host data is strictly confidential and securely protected</p>
           </div>
 
         </div>
