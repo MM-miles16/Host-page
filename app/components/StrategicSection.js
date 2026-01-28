@@ -36,7 +36,7 @@ export default function StrategicSection() {
           </p>
 
           <button className="strategicBtn">
-            What you are waiting for? Try Now
+            What you are waiting for? Get a Call.
           </button>
         </div>
 
