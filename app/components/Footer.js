@@ -15,7 +15,7 @@ export default function Footer() {
               <Image
                 src="/mlogo.png"
                 alt="Urban Drive Logo"
-                width={250}
+                width={251}
                 height={60}
                 className={styles.footerLogo}
               />
