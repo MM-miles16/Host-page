@@ -1,183 +1,131 @@
 "use client";
+
+import { useRouter, usePathname } from "next/navigation";
 import { useState, useEffect, useRef } from "react";
-import { useRouter } from "next/navigation";
 import Image from "next/image";
-import Link from "next/link";
-import { motion, AnimatePresence } from "framer-motion";
 import "./Navbar.css";
 
 export default function Navbar() {
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [mounted, setMounted] = useState(false);
-  const menuRef = useRef(null);
   const router = useRouter();
+  const pathname = usePathname();
 
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [learnOpen, setLearnOpen] = useState(false);
+
+  const dropdownRef = useRef(null);
+
+  // Lock scroll on mobile menu
   useEffect(() => {
-    setMounted(true);
+    document.body.style.overflow = menuOpen ? "hidden" : "auto";
+  }, [menuOpen]);
 
-    const checkToken = () => {
-      const token = localStorage.getItem("auth_token");
-      if (!token) return setIsLoggedIn(false);
+  // Close on route change
+  useEffect(() => {
+    setMenuOpen(false);
+    setLearnOpen(false);
+  }, [pathname]);
 
-      try {
-        const payload = JSON.parse(
-          atob(token.split(".")[1].replace(/-/g, "+").replace(/_/g, "/"))
-        );
-        const now = Math.floor(Date.now() / 1000);
-        if (payload?.exp && payload.exp > now) {
-          setIsLoggedIn(true);
-        } else {
-          localStorage.removeItem("auth_token");
-          setIsLoggedIn(false);
-        }
-      } catch {
-        localStorage.removeItem("auth_token");
-        setIsLoggedIn(false);
+  // Close desktop dropdown on outside click
+  useEffect(() => {
+    const handleOutside = (e) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
+        setLearnOpen(false);
       }
     };
-
-    checkToken();
-
-    window.addEventListener("auth-change", checkToken);
-    window.addEventListener("storage", checkToken);
-
-    return () => {
-      window.removeEventListener("auth-change", checkToken);
-      window.removeEventListener("storage", checkToken);
-    };
+    document.addEventListener("click", handleOutside);
+    return () => document.removeEventListener("click", handleOutside);
   }, []);
 
-  // ✅ Close dropdown when clicking outside
-  useEffect(() => {
-    const handleClickOutside = (e) => {
-      if (menuRef.current && !menuRef.current.contains(e.target)) {
-        setMenuOpen(false);
-      }
-    };
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
-
-  const handleMainButtonClick = () => {
-    if (isLoggedIn) router.push("/dashboard");
-    else router.push("/login");
+  const go = (path) => {
+    setMenuOpen(false);
+    setLearnOpen(false);
+    router.push(path);
   };
 
-  if (!mounted) return null;
+  const isLearnActive = pathname.startsWith("/learn-more");
 
   return (
-    <div ref={menuRef}>
-      <nav className="navbar">
-        {/* Logo */}
-        <div className="logo">
-          <Link href="/">
-            <Image
-              src="/mlogo.png"
-              alt="MM Miles Logo"
-              width={110}
-              height={33}
-              priority
-            />
-          </Link>
+    <>
+      {/* ================= NAVBAR ================= */}
+      <header className="navbar">
+        <div className="nav-container">
+          <div className="logo" onClick={() => router.push("/")}>
+            <Image src="/mlogo.jpg" alt="MMMiles" width={110} height={33} />
+          </div>
+
+          {/* DESKTOP NAV */}
+          <nav className="desktop-nav">
+            <div className="dropdown" ref={dropdownRef}>
+              <button
+                className={`nav-link ${isLearnActive ? "active" : ""}`}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setLearnOpen((p) => !p);
+                }}
+              >
+                Learn more
+                <span className={`caret ${learnOpen ? "open" : ""}`}>▾</span>
+              </button>
+
+              <div className={`dropdown-menu ${learnOpen ? "show" : ""}`}>
+                <span onClick={() => go("/learn-more/about")}>About Us</span>
+                <span onClick={() => go("/learn-more/reviews")}>Reviews</span>
+                <span onClick={() => go("/learn-more/faqs")}>FAQ's</span>
+                <span onClick={() => go("/learn-more/contact")}>Contact Us</span>
+              </div>
+            </div>
+
+            <button className="cta" onClick={() => go("/request-call")}>
+              Request a Call
+            </button>
+          </nav>
+
+          {/* HAMBURGER */}
+          <div className="hamburger" onClick={() => setMenuOpen(true)}>
+            <span />
+            <span />
+            <span />
+          </div>
         </div>
+      </header>
 
-        {/* Desktop Nav Links */}
-        <ul className="navLinks">
-          <li><Link href="/about">About Us</Link></li>
-          <li><Link href="/reviews">Reviews</Link></li>
-          <li><Link href="/faq">FAQ&apos;s</Link></li>
-          <li><Link href="/contact">Contact Us</Link></li>
-        </ul>
+      {/* ================= MOBILE MENU ================= */}
+      {menuOpen && (
+        <div className="mobile-overlay">
+          <div className="mobile-header">
+            <Image src="/mlogo.jpg" alt="MMMiles" width={110} height={33} />
+            <button className="close-btn" onClick={() => setMenuOpen(false)}>
+              ✕
+            </button>
+          </div>
 
-        {/* Login/Dashboard Button */}
-        <button className="loginBtn" onClick={handleMainButtonClick}>
-          {isLoggedIn ? "Dashboard" : "Login / Signup"}
-        </button>
-
-        {/* Mobile Menu Toggle */}
-        <button
-          className="mobileMenu"
-          aria-label="Toggle menu"
-          onClick={() => setMenuOpen(!menuOpen)}
-        >
-          {menuOpen ? "✖" : "☰"}
-        </button>
-      </nav>
-
-      {/* Mobile Dropdown with Animation */}
-      <AnimatePresence>
-        {menuOpen && (
-          <>
-            <motion.div
-              className="backdrop"
-              onClick={() => setMenuOpen(false)}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 0.6 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.3 }}
-            />
-            <motion.div
-              className="mobileDropdown"
-              initial={{ opacity: 0, y: -15 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-              transition={{ duration: 0.4, ease: "easeOut" }}
+          <div className="mobile-content">
+            {/* LEARN MORE */}
+            <button
+              className="mobile-main-link"
+              onClick={() => setLearnOpen((p) => !p)}
             >
-              <motion.ul
-                initial="hidden"
-                animate="show"
-                variants={{
-                  hidden: { opacity: 0 },
-                  show: {
-                    opacity: 1,
-                    transition: { staggerChildren: 0.12 },
-                  },
-                }}
-              >
-                {[
-                  { name: "About Us", link: "/about" },
-                  { name: "Reviews", link: "/reviews" },
-                  { name: "FAQ's", link: "/faq" },
-                  { name: "Contact Us", link: "/contact" },
-                ].map((item, index) => (
-                  <motion.li
-                    key={index}
-                    variants={{
-                      hidden: { opacity: 0, y: 15 },
-                      show: { opacity: 1, y: 0 },
-                    }}
-                    whileHover={{
-                      
-                    }}
-                    transition={{ type: "spring", stiffness: 300 }}
-                  >
-                    <Link href={item.link} onClick={() => setMenuOpen(false)}>
-                      {item.name}
-                    </Link>
-                  </motion.li>
-                ))}
-              </motion.ul>
+              Learn more
+              <span className={`mobile-caret ${learnOpen ? "open" : ""}`}>▾</span>
+            </button>
 
-              <motion.button
-                className="dropdownLogin"
-                onClick={() => {
-                  handleMainButtonClick();
-                  setMenuOpen(false);
-                }}
-                whileHover={{
-                  scale: 1.05,
-                  backgroundColor: "#D8B480",
-                  color: "#111",
-                }}
-                transition={{ duration: 0.3 }}
-              >
-                {isLoggedIn ? "Dashboard" : "Login / Signup"}
-              </motion.button>
-            </motion.div>
-          </>
-        )}
-      </AnimatePresence>
-    </div>
+            {/* OPTIONS (ONLY AFTER CLICK) */}
+            {learnOpen && (
+              <div className={`mobile-options ${learnOpen ? "show" : ""}`}>
+  <span onClick={() => go("/learn-more/about")}>About Us</span>
+  <span onClick={() => go("/learn-more/reviews")}>Reviews</span>
+  <span onClick={() => go("/learn-more/faqs")}>FAQ's</span>
+  <span onClick={() => go("/learn-more/contact")}>Contact Us</span>
+</div>
+            )}
+
+            {/* REQUEST CALL BELOW */}
+            <button className="mobile-cta" onClick={() => go("/request-call")}>
+              Request a Call
+            </button>
+          </div>
+        </div>
+      )}
+    </>
   );
 }

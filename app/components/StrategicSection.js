@@ -55,26 +55,26 @@ export default function StrategicSection() {
 
           <div className="featureCard topLeft">
             <div className="icon">🔒</div>
-            <h4>Security Teams</h4>
-            <p>Security teams work to keep your money safe</p>
+            <h4>Trusted Security</h4>
+            <p>Enterprise-grade protection for your car, data, and earnings.</p>
           </div>
 
           <div className="featureCard topRight">
             <div className="icon">🔐</div>
-            <h4>Authentication</h4>
-            <p>We use top authentication to protect your account</p>
+            <h4>Verified Access</h4>
+            <p>Only verified renters get access to your vehicle.</p>
           </div>
 
           <div className="featureCard bottomLeft">
-            <div className="icon">🏦</div>
-            <h4>Safety Funds</h4>
-            <p>Hold money with established financial institutions</p>
+            <div className="icon">💰</div>
+            <h4>Safe & Timely Payouts</h4>
+            <p>Your earnings, securely processed and paid on time.</p>
           </div>
 
           <div className="featureCard bottomRight">
             <div className="icon">📊</div>
-            <h4>Account Place</h4>
-            <p>Place all your account, all in one place</p>
+            <h4>All-in-One Dashboard</h4>
+            <p>Bookings, earnings, and control — all in one place.</p>
           </div>
 
         </div>
