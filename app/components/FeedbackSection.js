@@ -4,16 +4,65 @@ import Image from "next/image";
 import "./FeedbackSection.css";
 
 const reviews = [
-  { name: "Arun", role: "Host", img: "/users/u1.jpg", text: "Very smooth hosting experience. Payments are always on time." },
-  { name: "Rohit", role: "Car Owner", img: "/users/u2.jpg", text: "Support team is responsive and professional." },
-  { name: "Karthick", role: "Driver", img: "/users/u3.jpg", text: "Best platform I’ve used for car hosting." },
-  { name: "Suresh", role: "Host", img: "/users/u4.jpg", text: "Transparent pricing and easy dashboard." },
-  { name: "Ajith", role: "Owner", img: "/users/u5.jpg", text: "I feel safe hosting my car here." },
-  { name: "Manoj", role: "Driver", img: "/users/u6.jpg", text: "Excellent verification process." },
-  { name: "Vijay", role: "Host", img: "/users/u7.jpg", text: "Great experience overall." },
-  { name: "Ramesh", role: "Owner", img: "/users/u8.jpg", text: "Simple onboarding and good earnings." },
-  { name: "Deepak", role: "Driver", img: "/users/u9.jpg", text: "Very reliable platform." },
-  { name: "Prakash", role: "Host", img: "/users/u10.jpg", text: "Highly recommended for car hosts." },
+  { name: "Arun", 
+    role: "Top Host", 
+    img: "/users/u1.jpg", 
+    text: "Secure hosting from day one. Insurance coverage is clearly defined. Support guided every process step. Earnings tracking is simple and transparent. Assistance available 24/7." 
+  },
+
+  { name: "Rohit", 
+    role: "Verified Host", 
+    img: "/users/u2.jpg", 
+    text: "A platform built for serious hosts. Insurance adds complete peace of mind. Support responds without delay. Processes are smooth and professional. Reliable at every stage." 
+  },
+
+  { name: "Karthick", 
+    role: "Owner Partner", 
+    img: "/users/u3.jpg", 
+    text: "High standards for safety and care. Insurance protection feels dependable. Issues handled with responsibility. Payments are timely and accurate. Hosting with confidence." 
+  },
+
+  { name: "Suresh", 
+    role: "Host Partner", 
+    img: "/users/u4.jpg", 
+    text: "Effortless and well-managed hosting. Clear and structured insurance cover. Claim support was handled smoothly. Help available anytime needed. A premium hosting experience." 
+  },
+
+  { name: "Ajith", 
+    role: "Fleet Host", 
+    img: "/users/u5.jpg", 
+    text: "Managing multiple cars is seamless. Insurance processes are well handled. Dedicated support around the clock. Clear visibility into earnings. Designed with hosts in mind." 
+  },
+
+  { name: "Manoj", 
+    role: "Premium Host", 
+    img: "/users/u6.jpg", 
+    text: "Hosting feels structured and secure. Insurance coverage is well explained. Support is proactive and reliable. Earnings are clearly presented. Confidence in every booking." 
+  },
+
+  { name: "Vijay", 
+    role: "Verified Host", 
+    img: "/users/u7.jpg", 
+    text: "A refined platform for car owners. Insurance protection is reassuring. Support team is available anytime. Operations are smooth and transparent. Built for long-term hosting." 
+  },
+
+  { name: "Ramesh", 
+    role: "Owner", 
+    img: "/users/u8.jpg", 
+    text: "Safety standards are consistently high. Insurance gives complete clarity. Concerns are addressed promptly. Payments arrive on schedule. A dependable hosting experience." 
+  },
+
+  { name: "Deepak", 
+    role: "Driver", 
+    img: "/users/u9.jpg", 
+    text: "Host Partner Hosting is simple and professional. Insurance process is well structured. Support assisted during key moments. Dashboard offers full visibility. Trustworthy and efficient." 
+  },
+
+  { name: "Prakash", 
+    role: "Host", 
+    img: "/users/u10.jpg", 
+    text: "Managing vehicles is stress-free. Insurance handling is seamless. Dedicated support around the clock. Clear control over earnings. Designed for serious hosts." 
+  },
 ];
 
 export default function FeedbackSection() {
