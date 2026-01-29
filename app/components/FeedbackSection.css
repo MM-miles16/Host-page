@@ -1,6 +1,6 @@
 .feedbackSection {
   padding: 90px 40px;
-  background: #ffffff;
+  background: #fffaf3;
   text-align: center;
 }
 
@@ -27,7 +27,8 @@
 .feedbackRow {
   display: flex;
   justify-content: center;
-  gap: 28px;
+  gap: 18px;
+  padding: 10px 40px 80px;
   align-items: center;
   overflow: hidden;
 }
@@ -91,7 +92,7 @@
 
 /* Dots */
 .feedbackDots {
-  margin-top: 35px;
+  margin-top: -5px;
   display: flex;
   justify-content: center;
   gap: 8px;

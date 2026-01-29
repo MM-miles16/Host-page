@@ -1,6 +1,6 @@
 .hero {
   background: linear-gradient(to bottom, #e7e6e4,#eae8e4);
-  padding: 60px 0px 30px 60px;
+  padding: 10px 0px 10px 60px;
 }
 
 .heroContainer {
@@ -66,7 +66,7 @@
 .heroRight {
   flex: 1;
   display: flex;
-  margin-top: 30px;
+  margin-top: 20px;
   margin-left: -40px;
   justify-content: center;
   align-items: center;
