@@ -1,0 +1,266 @@
+/* File: app/contact/contact.module.css */
+@media (min-width: 1440px){
+  .ccontainer {
+  display: flex;
+  padding: 20px 130px 0px;
+  min-height: 60vh !important; /* Ensure it takes full viewport height */
+  background-color: #FEF9F5; /* A light background color */
+  font-family: Arial, sans-serif; /* Or your preferred font */
+}
+}
+.ccontainer {
+  display: flex;
+  padding: 20px 130px 0px;
+  min-height: 100vh; /* Ensure it takes full viewport height */
+  background-color: #FEF9F5; /* A light background color */
+  font-family: Arial, sans-serif; /* Or your preferred font */
+}
+
+/* --- Left Section Styles --- */
+.cleftSection {
+  flex: 1; /* Takes up half the width */
+  background-color: #F9F4EC;
+  padding: 0px 20px 0px;/* Adjust padding as needed */
+  display: flex;
+  border-radius: 12px 0 0 12px;
+  margin-bottom: 7px;
+  flex-direction: column;
+  justify-content: center; /* Vertically center content */
+  /* Subtle shadow on the right edge */
+  position: relative;
+  z-index: 2; /* Ensure it's above the right section's content */
+}
+
+.cmainTitle {
+  font-size: 34px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 6px;
+  font-family: Frank Ruhl Libre;
+}
+
+.cemail {
+  font-size: 16px;
+  font-weight: 400;
+  color: #666;
+  font-family: poppins;
+}
+.cphone {
+  font-size: 16px;
+  font-weight: 400;
+  color: #666;
+  margin-bottom: 5px;
+  font-family: poppins;
+}
+.csectionTitle {
+  font-size: 32px;
+  font-weight: 700;
+  font-family: Frank Ruhl Libre;
+  color: #333;
+  margin-top: 20px;
+  margin-bottom: 6px;
+}
+
+/* --- NEW Styles for Font Awesome Icons --- */
+.csocialIcons a {
+  /* Set the default color for the icons */
+  color: #BF9860; /* Gray/dim color initially */
+  transition: color 0.3s ease;
+  margin-right: 10px;
+  align-items: center;
+}
+
+.csocialIcons a:hover {
+  /* Change color on hover (use your primary brand color or white) */
+  color: #000;
+}
+
+/* Ensure the Font Awesome icons don't have default gray filters */
+.csocialIcons svg {
+    vertical-align: middle;
+}
+
+.caddress {
+  font-size: 16px;
+  font-weight: 400;
+  font-family: poppins;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+
+
+/* --- Right Section Styles --- */
+.crightSection {
+   /* Slightly more width for the image side */
+  background: #F9F4EC; /* Subtle gradient as in image */
+  padding: 0px 0px ;
+  display: flex;
+  border-radius: 0 12px 12px 0;
+  margin-bottom: 7px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; /* Center items horizontally */
+  position: relative;
+  overflow: hidden; /* To handle background patterns/images */
+}
+
+/* Background pattern from the image */
+
+
+
+
+
+.crightTitleBold {
+  font-size: 3.5rem; /* Larger for "Every Mile" */
+  font-weight: 800;
+  color: #333;
+  margin-bottom: 60px;
+  position: relative;
+  z-index: 2;
+}
+
+.cmainImageContainer {
+  width: 100%; /* Adjust width to fit the image properly */
+  max-width: 590px;
+  height: 100%;
+  margin-bottom: 0px;
+  position: relative;
+  z-index: 2;
+}
+
+.cmainImageContainer img {
+  object-fit: contain; /* Ensure image fits without cropping */
+}
+
+.cfeatures {
+  display: flex;
+  gap: 30px;
+  position: relative;
+  z-index: 2;
+}
+
+.cfeatureItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #fff;
+  padding: 10px 15px;
+  border-radius: 25px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  color: #333;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.cfeatureItem img {
+    filter: invert(30%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(0%) contrast(100%); /* Make icons dark gray */
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 1024px) {
+  .cleftSection, .crightSection {
+    padding: 60px 40px;
+  }
+  .cmainTitle {
+    font-size: 2.4rem;
+  }
+  .crightTitleBold {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .ccontainer {
+    flex-direction: column; /* Stack sections vertically */
+  }
+    .ccontainer {
+    display: flex;
+    padding: 20px 20px 0px;
+    min-height: 50vh; /* Ensure it takes full viewport height */
+    background-color: #FEF9F5; /* A light background color */
+    font-family: Arial, sans-serif; /* Or your preferred font */
+  }
+  .cemail {
+  font-size: 14px;
+  color: #666;
+}
+.cphone {
+  font-size: 14px;
+  color: #666;
+  
+}
+  .crightSection {
+    display: none;
+  }
+  .cleftSection{
+    flex: none; /* Remove flex sizing */
+    width: 100%;
+    padding: 40px 30px;
+  }
+  .crightSection {
+      padding-top: 60px; /* More space at top when stacked */
+  }
+  .cmainTitle {
+    font-size: 2.2rem;
+    margin-bottom: 7px;
+  }
+  .csectionTitle {
+    font-size: 24px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+  .csocialIcons {
+    margin-bottom: 14px;
+  }
+  .caddress, .cemail {
+    margin-bottom: 5px;
+  }
+  .crightTitle, .crightTitleBold {
+    text-align: center;
+  }
+  .crightTitleBold {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+  }
+  .cmainImageContainer {
+    width: 80%;
+    margin-bottom: 40px;
+  }
+  .cfeatures {
+    flex-wrap: wrap; /* Wrap features on small screens */
+    justify-content: center;
+    gap: 15px;
+  }
+  .featureItem {
+      font-size: 0.85rem;
+      padding: 8px 12px;
+  }
+  .caddress {
+  font-size: 13px;
+  color: #666;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+}
+
+@media (max-width: 480px) {
+    .cleftSection, .crightSection {
+        padding: 30px 20px 10px;
+    }
+    .cmainTitle {
+        font-size: 24px;
+    }
+    .crightTitleBold {
+        font-size: 2rem;
+    }
+    .cfeatures {
+        flex-direction: column;
+        align-items: stretch; /* Stretch items to fill width */
+    }
+    .cfeatureItem {
+        padding: 12px 15px; /* Increase padding for better tap target */
+        justify-content: center; /* Center content in stretched items */
+    }
+}

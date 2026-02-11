@@ -1,0 +1,130 @@
+.HostSection {
+  width: 100%;
+  padding: 120px 100px 50px; /* some breathing room */
+  background: #FEF9F5; /* optional background like your screenshot */
+  display: flex;
+  justify-content: center;
+}
+
+.HostcontentWrapper {
+  max-width: 1400px;
+  width: 100%;
+  text-align: center;
+}
+
+.Hostheading {
+  font-size: 2rem;
+  color: #111;
+ 
+}
+
+.Hostsubheading {
+  font-size: 1rem;
+  color: #444;
+  margin-bottom: 24px;
+}
+
+/* Responsive image wrapper */
+.HostimageWrapper {
+  position: relative;
+  width: 100%;
+}
+
+/* Image styling */
+.HoststepsImage {
+  width: 100%;     /* make it responsive */
+  height: auto;    /* keep aspect ratio */
+  display: block;  /* removes extra bottom spacing */
+  object-fit: contain; /* ensures full image is visible, no cropping */
+}
+
+/* Responsive text adjustments */
+@media (max-width: 1024px) {
+  .Hostheading {
+    font-size: 1.75rem;
+  }
+  .Hostsubheading {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .Hostheading {
+    font-size: 1.5rem;
+  }
+  .Hostsubheading {
+    font-size: 0.9rem;
+  }
+  .HostSection {
+    width: 100%;
+    padding: 60px 30px; /* some breathing room */
+    background: #FEF9F5; /* optional background like your screenshot */
+    display: flex;
+    justify-content: center;
+    }
+}
+
+.HostimageWrapper {
+  position: relative; /* important for button positioning */
+  width: 100%;
+}
+
+.HostFloatingButton {
+  position: absolute;
+  bottom: 50px;
+  left: 50px;
+  padding: 12px 24px;
+  background: linear-gradient(to right, #d8b480 0%, #bf9860 100%);
+  color: #111;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: poppins;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: 0.3s ease;
+}
+
+.HostFloatingButton:hover {
+  background: linear-gradient(to right, #d8b480 0%, #bf9860 100%);
+}
+@media (max-width: 480px) {
+  .HostFloatingButton {
+    padding: 8px 15px;
+    font-size: 13px;
+    font-weight: 700;
+    bottom: 17px;
+    right: 50px;
+    font-family: poppins;
+  }
+}
+@media (min-width: 1430px) {
+  .HostFloatingButton{
+    bottom: 70px;
+    left: 70px;
+    font-size: 1.3rem;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .HoststepsImage {
+    content: url("/host-mobile.jpg"); /* <-- your mobile image */
+  }
+}
+@media (max-width: 480px) {
+  .Hostheading {
+    font-size: 1.25rem;
+  }
+  .Hostsubheading {
+    font-size: 0.85rem;
+  }
+    .HostSection {
+    width: 100%;
+    padding: 60px 23px; /* some breathing room */
+    background: #FEF9F5; /* optional background like your screenshot */
+    display: flex;
+    justify-content: center;
+    }
+}

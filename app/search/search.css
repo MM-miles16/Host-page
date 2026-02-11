@@ -1,0 +1,365 @@
+.search-results-page {
+  padding: 40px;
+  background-color: #FEF9F5;
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+}
+
+.results-title {
+  text-align: center;
+  color: #333;
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.results-subtitle {
+  text-align: center;
+  font-size: 15px;
+  color: #777;
+  margin-bottom: 30px;
+}
+
+.results-layout {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+}
+
+/* ==== Sidebar Filter Panel ==== */
+.filter-panel {
+  background: #fff;
+  padding: 20px;
+  border-radius: 16px;
+  width: 250px;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.filter-panel h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.filter-group {
+  margin-bottom: 16px;
+}
+
+.filter-group label {
+  display: block;
+  font-weight: 500;
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 6px;
+}
+
+.filter-select {
+  width: 100%;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  background: #FEF9F5;
+  font-family: "Poppins", sans-serif;
+  font-size: 13px;
+  outline: none;
+}
+
+.filter-select:focus {
+  border-color: #D8B480;
+}
+
+.apply-filters-btn {
+  background: linear-gradient(to right, #D8B480, #BF9860);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  width: 100%;
+  padding: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: 0.3s ease;
+}
+
+.apply-filters-btn:hover {
+  background: linear-gradient(to right, #cfa86a, #a67a47);
+}
+
+/* ==== Car Grid ==== */
+.cars-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+/* ==== Individual Car Card ==== */
+.car-card {
+  background: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+
+.car-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.car-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.car-info {
+  padding: 15px 18px;
+}
+
+.car-info h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #222;
+}
+
+.car-info p {
+  margin: 4px 0;
+  color: #555;
+  font-size: 14px;
+}
+
+.price {
+  color: #d4a762;
+  font-weight: 700;
+  font-size: 16px;
+  margin-top: 8px;
+}
+
+.distance {
+  color: #999;
+  font-size: 13px;
+}
+
+.book-btn {
+  display: block;
+  width: 100%;
+  background: linear-gradient(to right, #D8B480, #BF9860);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 0;
+  margin-top: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.book-btn:hover {
+  background: linear-gradient(to right, #cfa86a, #a67a47);
+}
+
+/* ==== Modal ==== */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 50;
+}
+
+.booking-modal {
+  background: #fff;
+  border-radius: 16px;
+  padding: 20px;
+  width: 400px;
+  max-width: 90%;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.modal-image {
+  border-radius: 10px;
+  width: 100%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.modal-content {
+  text-align: center;
+}
+
+.modal-type {
+  color: #666;
+}
+
+.modal-price {
+  color: #d4a762;
+  font-weight: 700;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.confirm-btn {
+  background: linear-gradient(to right, #D8B480, #BF9860);
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  width: 100%;
+}
+
+.confirm-btn:hover {
+  background: linear-gradient(to right, #cfa86a, #a67a47);
+}
+
+/* ==== Responsive ==== */
+@media (max-width: 900px) {
+  .results-layout {
+    flex-direction: column;
+  }
+
+  .filter-panel {
+    width: 100%;
+  }
+}
+
+/* ==== Skeleton Loading ==== */
+.skeleton-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.skeleton {
+  background: linear-gradient(90deg, #f2ece3 25%, #f8f6f2 50%, #f2ece3 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s infinite;
+  border-radius: 10px;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.skeleton-img {
+  height: 180px;
+  margin-bottom: 12px;
+}
+
+.skeleton-line {
+  height: 14px;
+  margin-bottom: 10px;
+}
+
+.skeleton-line.short {
+  width: 70%;
+}
+
+.skeleton-btn {
+  height: 32px;
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* ==== Filter Panel ==== */
+.results-layout {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+}
+
+.filter-panel {
+  width: 250px;
+  background: #f9f4ec;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  flex-shrink: 0;
+}
+
+.filter-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.filter-header h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+}
+
+.clear-filters-btn {
+  background: none;
+  border: none;
+  color: #d4a762;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.clear-filters-btn:hover {
+  color: #a67a47;
+}
+
+.filter-group {
+  margin-bottom: 15px;
+}
+
+.filter-group label {
+  display: block;
+  font-weight: 500;
+  color: #444;
+  margin-bottom: 6px;
+}
+
+.filter-select {
+  width: 100%;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  background: #fff;
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+}
+
+.filter-select:focus {
+  outline: none;
+  border-color: #d4a762;
+}
+
+/* Adjust car grid beside sidebar */
+.cars-grid {
+  flex-grow: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 25px;
+}
+

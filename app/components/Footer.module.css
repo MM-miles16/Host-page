@@ -1,0 +1,325 @@
+.footer {
+  background:linear-gradient(to right bottom,#000000 10%, #2a2929 80%) ;
+  color: #e6e6e6;
+  padding: 40px 90px;
+  border-radius: 12px;
+  margin-top: 60px;
+}
+
+.footerbody {
+  margin: 20px;
+}
+
+.footerContainer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+/* Left section */
+.footerLeft {
+  max-width: 300px;
+  font-size: 15px;
+  margin-left: 70px;
+  margin-top: 15px;
+  line-height: 1.9;
+  
+
+}
+
+.logoWrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+/* Right section (Social + Links stacked) */
+/* Row for text + icons */
+.followRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1px;
+  margin-bottom: 10px; /* space before links */
+}
+
+.followText {
+  font-size: 14px;
+  white-space: nowrap; /* keep it in one line */
+  margin-left: 100px;
+}
+.socialIcons {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  padding: 10px;
+}
+
+.icon {
+  font-size: 28px;
+  border: 1.8px solid #bfa171;
+  background: #ede7e4;
+  color: #2e2e2e;
+  border-radius: 12px;
+  padding: 5px;
+  transition: all 0.35s ease;
+  
+}
+
+/* ✨ Hover animation */
+.icon:hover {
+  transform: scale(1.2) rotate(5deg);
+  box-shadow: 0 0 15px rgba(191, 152, 96, 0.7);
+  background: #fffaf3;
+  border-color: #d8b480;
+  color: #b27e3f;
+}
+
+/* 💫 Optional idle pulsing glow for premium feel */
+@keyframes socialPulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 6px rgba(191, 152, 96, 0.25);
+  }
+  50% {
+    transform: scale(1.06);
+    box-shadow: 0 0 12px rgba(191, 152, 96, 0.45);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 6px rgba(191, 152, 96, 0.25);
+  }
+}
+
+.icon {
+  animation: socialPulse 4.5s ease-in-out infinite;
+}
+
+/* 🌈 Optional per-icon color highlights */
+.instagram:hover {
+  color: #e1306c;
+  box-shadow: 0 0 20px #e1306c;
+}
+
+.facebook:hover {
+  color: #1877f2;
+  box-shadow: 0 0 20px #1877f2;
+}
+
+.whatsapp:hover {
+  color: #25d366;
+  box-shadow: 0 0 20px #25d366;
+}
+
+
+
+.footerLinks {
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+  margin-right: 80px;
+  font-size: 14px;
+}
+
+.footerLinks h4 {
+  font-size: 18px;
+  margin-bottom: 10px;
+ 
+}
+
+.footerLinks a {
+  display: block;
+  margin-bottom: 8px;
+  color: #e6e6e6;
+  font-size: 14px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footerLinks a:hover {
+  color: #b98156;
+}
+
+/*.footerLeft a {
+  color: white;
+  text-decoration:none;
+}
+.footerLeft p{
+  margin-bottom: 10px;
+}*/
+/* Target the anchor tags inside the footer */
+.footerLeft a {
+    /* 1. Remove the default underline */
+    text-decoration: none;
+
+    /* 2. Set the text color to inherit from the parent or use a specific color */
+    color: inherit; /* Inherits the color of the parent <p> or .footerLeft */
+    /* If you want a specific color like light gray: color: #bdbdbd; */
+    
+    /* 3. Ensure the font is consistent (optional, but good practice) */
+    /* font-weight: normal; */
+}
+
+/* Ensure the wrapper paragraphs are styled cleanly */
+.footerLeft p {
+    /* Remove default top/bottom margin from paragraphs */
+    margin: 5px 0; 
+    
+    /* Set the default text color for the contact info */
+    color: #bdbdbd; /* Use the color from your buttons, or your footer's text color */
+    font-size: 0.95rem; /* Adjust font size as needed */
+}
+
+
+/* Optional: Add a subtle hover effect back without the underline */
+.footerLeft a:hover {
+    color: #fff; /* Lighten text slightly on hover for feedback */
+}
+
+@media (max-width: 1024px) {
+  .footer {
+    padding: 30px 60px;
+  }
+
+  .footerLinks {
+    gap: 40px;
+  }
+}
+
+
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 20px 30px;
+  }
+    .logoWrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+    padding-left: 18px;
+  }
+  .followText {
+  font-size: 14px;
+  white-space: nowrap; /* keep it in one line */
+  margin-left: -100px;
+}
+
+  .footerContainer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footerLinks {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .footerLeft {
+  max-width: 300px;
+  font-size: 14px;
+  margin-left: 0px;
+  margin-top: 15px;
+  line-height: 1.9;
+
+}
+.followRow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1px;
+    margin-left: 90px;
+    margin-bottom: 10px; /* space before links */
+  }
+  .footerLinks {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 30px;
+  margin-right: 0px;
+  font-size: 14px;
+}
+.footerContainer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+}
+
+
+
+@media (max-width: 480px){
+  .footer {
+    padding: 20px 20px;
+  }
+  .followRow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1px;
+    margin-left: 0px;
+    margin-bottom: 10px; /* space before links */
+  }
+
+  .followText {
+  font-size: 14px;
+  white-space: nowrap; /* keep it in one line */
+  margin-left: 0px;
+}
+.footerLinks {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 20px;
+  margin-right: 0px;
+  font-size: 14px;
+}
+
+.footerLinks h4 {
+  font-size: 16px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  background: linear-gradient(to right, #d8b480 0%, #bf9860 100%);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+
+.footerLinks a {
+  display: block;
+  margin-bottom: 8px;
+  color: #e6e6e6;
+  font-size: 13px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.footerContainer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.footerLeft p {
+    /* Remove default top/bottom margin from paragraphs */
+    margin: 5px 0; 
+    
+    /* Set the default text color for the contact info */
+    color: #bdbdbd; /* Use the color from your buttons, or your footer's text color */
+    font-size: 13px; /* Adjust font size as needed */
+}
+
+.footerLogo{
+  max-width: 150px !important;
+  max-height: 42px;
+  align-items: center;
+  margin-left: 50px;
+  justify-content: center;
+}
+
+}

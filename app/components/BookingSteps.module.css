@@ -1,0 +1,98 @@
+.stepsSection {
+  width: 100%;
+  padding: 40px 100px; /* some breathing room */
+  background: #FEF9F5; /* optional background like your screenshot */
+  display: flex;
+  justify-content: center;
+}
+
+.contentWrapper {
+  max-width: 1400px;
+  width: 100%;
+  text-align: center;
+}
+
+.heading {
+  font-size: 34px;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 8px;
+  font-family: Frank Ruhl Libre;
+}
+
+
+.subheading {
+  font-size: 16px ;
+  font-weight: 500;
+  color: #666;
+  margin-bottom: 24px;
+  font-family: poppins;
+}
+
+/* Responsive image wrapper */
+.imageWrapper {
+  position: relative;
+  width: 100%;
+}
+
+/* Image styling */
+.stepsImage {
+  width: 100%;     /* make it responsive */
+  height: auto;    /* keep aspect ratio */
+  display: block;  /* removes extra bottom spacing */
+  object-fit: contain; /* ensures full image is visible, no cropping */
+}
+
+/* Responsive text adjustments */
+
+@media (max-width: 1024px) {
+  .heading {
+    font-size: 1.75rem;
+  }
+  .subheading {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .heading {
+    font-size: 1.5rem;
+  }
+  .subheading {
+    font-size: 0.9rem;
+  }
+  .stepsSection {
+    width: 100%;
+    padding: 60px 30px; /* some breathing room */
+    background: #FEF9F5; /* optional background like your screenshot */
+    display: flex;
+    justify-content: center;
+    }
+}
+
+
+@media (max-width: 480px) {
+  .stepsImage {
+    content: url("/5step-mobile.png"); /* your mobile image */
+  }
+}
+
+@media (max-width: 480px) {
+  .heading {
+    font-size: 22px !important;
+  }
+  .subheading {
+    font-size: 12px !important;
+    margin-bottom: 7px;
+  }
+    .stepsSection {
+    width: 100%;
+    padding: 30px 20px 40px; /* some breathing room */
+    background: #FEF9F5; /* optional background like your screenshot */
+    display: flex;
+    justify-content: center;
+    }
+}
+
+
+

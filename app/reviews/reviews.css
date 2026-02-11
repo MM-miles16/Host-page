@@ -1,0 +1,132 @@
+/* === Reviews Section Container === */
+.testimonialSection {
+  background-color: #fefbf6;
+  padding: 20px 60px;
+  font-family: "Inter", sans-serif;
+  text-align: center;
+}
+
+/* === Centered Title & Subtitle === */
+.testimonialHeader {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.testimonialHeading {
+  font-size: 40px;
+  font-weight: 700;
+  font-family: Frank Ruhl Libre;
+  color: #b68b2d;
+  margin-bottom: 10px;
+  letter-spacing: 0.5px;
+}
+
+.testimonialSub {
+  font-size: 16px;
+  color: #141414;
+  font-weight: 600;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+  font-family: poppins;
+}
+
+/* === Grid Layout === */
+.testimonialGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  justify-content: center;
+}
+
+/* === Individual Card === */
+.testimonialCard {
+  background: #fff;
+  border-radius: 16px;
+  padding: 15px 30px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  text-align: left;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s ease, transform 1s ease, box-shadow 0.4s ease;
+  min-height: auto;
+}
+
+.testimonialCard.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.testimonialCard:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.1);
+}
+
+/* === Text === */
+.testimonialText {
+  font-size: 14px;
+  font-weight: 400;
+  color: #333;
+  line-height: 1.7;
+  margin-bottom: 20px;
+  min-height: 120px;
+  font-family: poppins;
+}
+
+/* === Profile === */
+.testimonialProfile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.profileImage {
+  border-radius: 50%;
+  border: 2px solid #f3d27a;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonialCard:hover .profileImage {
+  transform: scale(1.05);
+  box-shadow: 0 0 12px rgba(243, 210, 122, 0.7);
+}
+
+.profileName {
+  font-weight: 700;
+  color: #111;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: poppins;
+}
+
+.profileRole {
+  font-size: 12px;
+  font-weight: 500;
+  font-family: poppins;
+  color: #777;
+}
+
+/* === Responsive === */
+@media (max-width: 1200px) {
+  .testimonialGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+  .testimonialGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .testimonialSection {
+    padding: 60px 30px;
+  }
+
+  .testimonialHeading {
+    font-size: 2rem;
+  }
+
+  .testimonialSub {
+    font-size: 1rem;
+  }
+}

@@ -1,0 +1,173 @@
+/* --- Base Navbar --- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.6rem 2rem 0.6rem;
+  background:linear-gradient(to right bottom,#000000 10%, #2a2929 80%) ;
+  color: #f5e7e7;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 1000;
+  transition: background 0.3s ease;
+}
+
+/* --- Logo --- */
+.logo {
+  position: relative;
+  width: 130px;
+  margin-top: 5px;
+}
+
+/* --- Desktop Navigation --- */
+.navLinks {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+  margin-left: -90px;
+}
+
+.navLinks a {
+  color: #ceccba !important;
+  font-size: 15px;
+  
+  font-family: poppins;
+  text-decoration: none !important;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.navLinks a:hover {
+  color: #d8b480 !important;
+  transform: scale(1.05);
+}
+
+/* --- Button --- */
+.loginBtn {
+  background: linear-gradient(to right, #d8b480 0%, #bf9860 100%);
+  color: #111;
+  padding: 0.66rem 1rem;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: 1px solid #bf9860;
+}
+
+.loginBtn:hover {
+  background: linear-gradient(to right, #bf9860 0%, #d8b480 100%);
+  transform: scale(1.05);
+}
+
+/* --- Mobile Menu Button --- */
+.mobileMenu {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.7rem;
+  cursor: pointer;
+  color: white;
+}
+
+/* --- Backdrop --- */
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 900;
+}
+
+/* --- Mobile Dropdown --- */
+.mobileDropdown {
+  position: absolute;
+  top: 54px;
+  left: 0;
+  right: 0;
+  background: #323232;
+  color: white;
+  padding: 10px 0.5rem 30px;
+  border-radius: 0 0 12px 12px;
+  z-index: 1001;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mobileDropdown ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  max-width: 400px;
+}
+
+.mobileDropdown li {
+  padding: 0.7rem 0;
+  margin: 0.2rem 0;
+  font-size: 1.05rem;
+  cursor: pointer;
+  font-weight: 500;
+  border-radius: 8px;
+  transition: all 0.35s ease;
+  text-align: center;
+}
+
+.mobileDropdown li a {
+  color: #ffffff !important;
+  text-decoration: none !important;
+  display: block;
+}
+
+/* ✨ Hover Highlight */
+.mobileDropdown li:hover a{
+  color: #d8b480 !important;
+  
+}
+
+/* --- Dropdown Button --- */
+.dropdownLogin {
+  margin-top: 1rem;
+  width: 60%;
+  max-width: 300px;
+  background: linear-gradient(to right, #d8b480 0%, #bf9860 100%);
+  color: #111;
+  border: none;
+  padding: 0.8rem 0;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dropdownLogin:hover {
+  transform: translateY(-2px) scale(0.7);
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .navLinks,
+  .loginBtn {
+    display: none;
+  }
+  .mobileMenu {
+    display: block;
+  }
+  .logo {
+   margin-left: -15px;
+   margin-bottom: -3px;
+  }
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.6rem 2rem 0.6rem;
+    position: absolute;
+    
+}
+
+}
